@@ -1,0 +1,27 @@
+<ng-container *ngIf=infos>
+  <mat-card class="infopoke">
+    <mat-grid-list cols="2" rowHeight="50px">
+      <mat-grid-tile [rowspan]="3" [colspan]="1">
+        <img matListAvatar src="../../assets/img/official-artwork/{{infos.id}}.png" width="150px" height="150px">
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="1">
+        <p>{{this.infos.name}}</p>
+        <button mat-icon-button onclick="document.getElementById('audio').play()">
+          <mat-icon>play_circle</mat-icon>
+          <audio id="audio" src="assets/audio/{{infos.id}}.mp3" type="audio/mpeg">
+          </audio>
+        </button>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="1">
+        <mat-chip-list>
+          <mat-chip *ngFor="let type of this.infos.types">{{type}}</mat-chip>
+        </mat-chip-list>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="1">Taille: {{this.infos.height | number: "1.1" }} m</mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="1">No. {{ this.infos.id | number: "3.0" }}</mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="1">Poids: {{this.infos.weight | number: "1.1"}} kg</mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="2">description: {{this.infos.description}}</mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+
+</ng-container>

@@ -1,0 +1,15 @@
+.item {
+  margin : 10px;
+  width: 20%;
+  margin: 1%;
+  display: flex;
+  padding-left: 10px;
+  color: inherit;
+  align-items: center;
+  width: 150%;
+
+}
+
+.item:hover {
+  background-color: lightgray;
+}

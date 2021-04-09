@@ -1,0 +1,10 @@
+<mat-sidenav-container style="height: 90%; overflow: auto;">
+  <mat-sidenav mode="side" opened>
+    <app-pokemon-list (idEmitter)="onPick($event)"></app-pokemon-list>
+  </mat-sidenav>
+  <mat-sidenav-content style="margin-left: 15%">
+    <ng-container *ngIf="this.id">
+      <app-info-pokemon [id]=this.id></app-info-pokemon>
+    </ng-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>
